@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: one-web
+  profiles:
+    active: dev
+  cache:
+    jcache:
+      config: ehcache3.xml
+
+logging:
+  level:
+    root: INFO
+  file: ${spring.application.name}.log
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/javascript,text/css,text/xml,text/plain
+    min-response-size: 2048
+  tomcat:
+    accept-count: 400
+    uri-encoding: utf-8
+    min-spare-threads: 25
+    max-threads: 400
+  connection-timeout: 20000
+
+eureka:
+    instance:
+        preferIpAddress: true
+    client:
+        registerWithEureka: true
+        fetchRegistry: true
+
+---  
+spring:
+  profiles: dev
+  jpa:     
+    showSql: true 
+  datasource:
+    one: 
+      datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+        username: root
+        password: root
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: "SELECT 'x'"
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 50
+  rabbitmq:
+    host: localhost
+    port: 15672
+    username: admin
+    password: admin
+    virtual-host: spring-cloud-dev
+server:
+    port: 7901
+
+eureka:
+    client:
+        serviceUrl: 
+            defaultZone: http://localhost:7000/eureka

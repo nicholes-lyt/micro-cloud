@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/easynet-cn/config-repo.git
+          
+logging:
+  level:
+    root: INFO
+  file: ${spring.application.name}.log
+ 
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/javascript,text/css,text/xml,text/plain
+    min-response-size: 2048
+  tomcat:
+    accept-count: 400
+    uri-encoding: utf-8
+    min-spare-threads: 25
+    max-threads: 400
+  connection-timeout: 20000
+  
+eureka:
+    instance:
+        preferIpAddress: true
+    client:
+        registerWithEureka: true
+        fetchRegistry: true
+---  
+spring:
+  profiles: dev
+  rabbitmq:
+    rabbitmq:
+    host: localhost
+    port: 15672
+    username: admin
+    password: admin
+    virtual-host: spring-cloud-dev
+server:
+    port: 7100
+
+eureka:
+    client:
+        serviceUrl: 
+            defaultZone: http://localhost:7000/eureka

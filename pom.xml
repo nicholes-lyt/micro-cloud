@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.micro.cloud</groupId>
+	<artifactId>micro-cloud-build</artifactId>
+	<version>1.0.0.BUILD-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>micro-cloud-build</name>
+	<description>Micro Cloud Build</description>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>nicholes</id>
+			<name>nicholes</name>
+			<email>nicholes.lyt@qq.com</email>
+		</developer>
+	</developers>
+	<profiles>
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
+
+	<modules>
+		<module>micro-cloud-parent</module>
+    	<module>micro-cloud-config-server</module>
+    	<module>micro-cloud-eureka-server</module>
+    	<module>micro-cloud-one-web</module>
+	</modules>
+	
+</project>
