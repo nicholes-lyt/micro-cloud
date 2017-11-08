@@ -33,7 +33,14 @@ eureka:
         registerWithEureka: true
         fetchRegistry: true
 ---  
-
+spring:
+  profiles: dev
+  rabbitmq: 
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    
 server:
     port: 7001
 
