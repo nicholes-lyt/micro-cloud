@@ -14,7 +14,7 @@ public class HomeController {
 		return "home/index";
 	}
 	
-	@Value("${server.port}")
+	@Value("${spring.demo.test}")
     String port;
 	
 	@ResponseBody
