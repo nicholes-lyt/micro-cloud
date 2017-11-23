@@ -25,4 +25,4 @@ spring:
     port: 5672
     username: admin
     password: admin
-
+  demo.test: test refresh config
