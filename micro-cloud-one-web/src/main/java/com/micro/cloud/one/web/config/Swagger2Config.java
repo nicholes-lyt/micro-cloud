@@ -17,7 +17,7 @@ public class Swagger2Config {
 	@Bean
 	public Docket createRestApi() {
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
-				.apis(RequestHandlerSelectors.basePackage("com.easynetcn.cloud.one.web.controller"))
+				.apis(RequestHandlerSelectors.basePackage("com.micro.cloud.one.web.controller"))
 				.paths(PathSelectors.any()).build();
 	}
 

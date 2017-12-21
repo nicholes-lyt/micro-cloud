@@ -1,4 +1,7 @@
-spring:
+management.security.enabled: false
+management.endpoint.env.enabled: false
+
+spring: 
   application:
     name: one-web
   profiles:
@@ -14,7 +17,9 @@ spring:
     encoding: UTF-8
     content-type: text/html
     cache: false   
-
+  jpa: 
+    show-sql: true
+  
 logging:
   level:
     root: INFO
@@ -30,7 +35,7 @@ server:
     uri-encoding: utf-8
     min-spare-threads: 25
     max-threads: 400
-  connection-timeout: 20000
+    connection-timeout: 20000
 
 eureka:
     instance:

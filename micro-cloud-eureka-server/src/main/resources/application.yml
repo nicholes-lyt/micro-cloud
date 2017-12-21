@@ -16,7 +16,7 @@ server:
     uri-encoding: utf-8
     min-spare-threads: 25
     max-threads: 400
-  connection-timeout: 20000
+    connection-timeout: 20000
 
 eureka:
     environment: ${spring.profiles.active}
