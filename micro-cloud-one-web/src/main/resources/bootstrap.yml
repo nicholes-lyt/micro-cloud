@@ -5,11 +5,12 @@ spring:
   application:
     name: one-web
   profiles:
-    active: devlocal
+    active: dev
   cache:
     jcache:
       config: ehcache3.xml
-  
+  cloud.config.discovery.enabled: true
+  cloud.config.discovery.serviceId: config-server 
   thymeleaf:
     prefix: classpath:/template/
     mode: HTML5
@@ -43,22 +44,9 @@ eureka:
         registerWithEureka: true
         fetchRegistry: true
 
-
----  
-spring:
-  profiles: devlocal
-  profiles.active: native
-  cloud.config.server.native.addLabelLocations: true
-server:
-    port: 7002
-
-
-            
 ---  
 spring:
   profiles: dev
-  cloud.config.discovery.enabled: true
-  cloud.config.discovery.serviceId: config-server 
 server:
     port: 7002
 
@@ -66,5 +54,3 @@ eureka:
     client:
         serviceUrl: 
             defaultZone: http://localhost:7000/eureka
-            
-            
