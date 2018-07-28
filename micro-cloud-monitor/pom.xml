@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.micro.cloud</groupId>
 		<artifactId>micro-cloud-parent</artifactId>
-		<version>1.0.0.BUILD-SNAPSHOT</version>
+		<version>${micro.cloud.version}</version>
 		<relativePath>../micro-cloud-parent</relativePath>
 	</parent>
 
@@ -18,28 +18,41 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-properties-migrator</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<!-- 监控 -->
 		<dependency>
-		    <groupId>de.codecentric</groupId>  
-		    <artifactId>spring-boot-admin-server</artifactId>  
-		    <version>${spring-boot-admin.version}</version>
-		</dependency>  
-		<dependency>  
-		    <groupId>de.codecentric</groupId>  
-		    <artifactId>spring-boot-admin-server-ui</artifactId>  
-		    <version>${spring-boot-admin.version}</version>  
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-server</artifactId>
+			<version>${spring-boot-admin.version}</version>
 		</dependency>
-		<dependency>
+		 <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>${spring-boot-admin.version}</version>
+        </dependency>
+		<!-- <dependency>
 		    <groupId>de.codecentric</groupId>
 		    <artifactId>spring-boot-admin-server-ui-activiti</artifactId>
 		    <version>${spring-boot-admin.version}</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 		    <groupId>org.jolokia</groupId>
 		    <artifactId>jolokia-core</artifactId>
 		</dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+		 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 	</dependencies>
 	
 	

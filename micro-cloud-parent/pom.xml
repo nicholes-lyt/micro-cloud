@@ -4,22 +4,23 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.micro.cloud</groupId>
 	<artifactId>micro-cloud-parent</artifactId>
-	<version>1.0.0.BUILD-SNAPSHOT</version>
+	<version>${micro.cloud.version}</version>
 	<packaging>pom</packaging>
 	<name>micro-cloud-parent</name>
 	<description>Micro Cloud Parent</description>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.9.RELEASE</version>
+		<version>2.0.3.RELEASE</version>
 	</parent>
 	<properties>
+		<micro.cloud.version>2.0.0.BUILD-SNAPSHOT</micro.cloud.version>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.version>3.1.1</maven.version>
 		<java.version>1.8</java.version>
-		<tomcat.version>8.5.20</tomcat.version>
+		<tomcat.version>8.5.32</tomcat.version>
 		<hibernate.version>5.2.12.Final</hibernate.version>
 		<hikaricp.version>2.7.4</hikaricp.version>
 		<ehcache3.version>3.4.0</ehcache3.version>
@@ -28,7 +29,7 @@
 		<thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
 		<poi.version>3.16</poi.version>
 		<springfox-swagger2.version>2.7.0</springfox-swagger2.version>
-		<spring-boot-admin.version>1.5.6</spring-boot-admin.version>
+		<spring-boot-admin.version>2.0.1</spring-boot-admin.version>
 	</properties>
 
 
@@ -37,12 +38,13 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Edgware.RELEASE</version>
+				<version>Finchley.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
 	<repositories>
 		<repository>
 			<id>aliyun</id>
@@ -52,8 +54,12 @@
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/libs-milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
+	
 	<pluginRepositories>
 		<pluginRepository>
 			<id>aliyun</id>
@@ -65,6 +71,7 @@
 			<url>https://repo.spring.io/libs-milestone</url>
 		</pluginRepository>
 	</pluginRepositories>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -102,4 +109,5 @@
 			</plugin>
 		</plugins>
 	</build>
+	
 </project>

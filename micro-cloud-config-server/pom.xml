@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.micro.cloud</groupId>
 		<artifactId>micro-cloud-parent</artifactId>
-		<version>1.0.0.BUILD-SNAPSHOT</version>
+		<version>${micro.cloud.version}</version>
 		<relativePath>../micro-cloud-parent</relativePath>
 	</parent>
 	
@@ -27,7 +27,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,6 +37,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
+		<dependency>
+		    <groupId>com.jcraft</groupId>
+		    <artifactId>jsch</artifactId>
 		</dependency>
 
 	</dependencies>

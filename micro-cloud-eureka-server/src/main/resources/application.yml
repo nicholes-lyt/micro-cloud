@@ -18,10 +18,13 @@ server:
     max-threads: 400
     connection-timeout: 20000
 
-eureka:
+spring.cloud.client.ipAddress: 127.0.0.1
+eureka: 
     environment: ${spring.profiles.active}
     instance:
+        hostname: localhost
         preferIpAddress: true
+        instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${spring.application.instance_id:${server.port}}
     client:
         registerWithEureka: true
         fetchRegistry: true

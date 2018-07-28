@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.micro.cloud</groupId>
 		<artifactId>micro-cloud-parent</artifactId>
-		<version>1.0.0.BUILD-SNAPSHOT</version>
+		<version>${micro.cloud.version}</version>
 		<relativePath>../micro-cloud-parent</relativePath>
 	</parent>
 	
