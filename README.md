@@ -23,7 +23,7 @@ management:
       show-details: ALWAYS
 ```
 #### 3、one-web中修改
-* 1、将extends WebMvcConfigurerAdapter改为implements WebMvcConfigurer
+* 1、将基础WebMvcConfigurerAdapter改为implements WebMvcConfigurer
 * 2、jpa配置将jpaProperties.getHibernateProperties(dataSource)改为如下方式
 ```
 	@Primary
