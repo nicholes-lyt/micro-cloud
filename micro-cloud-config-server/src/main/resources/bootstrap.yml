@@ -6,10 +6,11 @@ spring:
     active: dev
   cloud:
     config:
+      label: master
       server:
         git:
-          uri: https://github.com/nicholes-lyt/micro-cloud.git
-          searchPaths: config-repo
+          uri: https://github.com/nicholes-lyt/config-repo.git
+          #searchPaths: config-repo
           skipSslValidation: true
           force-pull: true
           

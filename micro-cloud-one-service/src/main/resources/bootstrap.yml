@@ -1,0 +1,55 @@
+management.security.enabled: false
+management.endpoint.env.enabled: false
+
+spring: 
+  application:
+    name: one-service
+  profiles:
+    active: dev
+  cloud.config.discovery.enabled: true
+  cloud.config.discovery.serviceId: config-server 
+  
+logging:
+  level:
+    root: INFO
+  file: ${spring.application.name}.log
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/javascript,text/css,text/xml,text/plain
+    min-response-size: 2048
+  tomcat:
+    accept-count: 400
+    uri-encoding: utf-8
+    min-spare-threads: 25
+    max-threads: 400
+    connection-timeout: 20000
+
+eureka:
+    instance:
+        preferIpAddress: true
+    client:
+        registerWithEureka: true
+        fetchRegistry: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+      health:
+        show-details: ALWAYS
+
+---  
+spring:
+  profiles: dev
+server:
+    port: 7004
+
+eureka:
+    client:
+        serviceUrl: 
+            defaultZone: http://localhost:7000/eureka
