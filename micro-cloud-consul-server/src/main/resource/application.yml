@@ -1,0 +1,46 @@
+spring:
+  application.name: consul-server
+  profiles.active: dev
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery: 
+        register: true
+        tags: dev
+        serviceName: ${spring.application.name}
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        healthCheckInterval: 15s
+  
+logging:
+  level:
+    root: INFO
+  file: ${spring.application.name}.log
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/javascript,text/css,text/xml,text/plain
+    min-response-size: 2048
+  tomcat:
+    accept-count: 400
+    uri-encoding: utf-8
+    min-spare-threads: 25
+    max-threads: 400
+    connection-timeout: 20000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+        
+---  
+spring:
+  profiles: dev
+server:
+    port: 7000
+

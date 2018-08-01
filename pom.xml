@@ -37,7 +37,8 @@
     	<module>micro-cloud-eureka-server</module>
     	<module>micro-cloud-one-web</module>
     	<module>micro-cloud-monitor</module>
-    <module>micro-cloud-one-service</module>
+    	<module>micro-cloud-one-service</module>
+    	<module>micro-cloud-consul-server</module>
   </modules>
 	
 </project>
