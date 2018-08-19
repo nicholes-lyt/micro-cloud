@@ -29,6 +29,7 @@
 		<poi.version>3.16</poi.version>
 		<springfox-swagger2.version>2.7.0</springfox-swagger2.version>
 		<spring-boot-admin.version>1.5.6</spring-boot-admin.version>
+		<docker.image.prefix>springio</docker.image.prefix>
 	</properties>
 
 
